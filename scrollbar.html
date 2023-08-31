@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        section {
+            padding: 50px;
+            background-color: #000;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #fff;
+        }
+
+        section p {
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        #scrollpath {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        #progressbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            border-radius: 23px;
+            background: linear-gradient(to top, #008aff, #00ffe7);
+            animation: animte 5s linear infinite;
+        }
+
+        @keyframes animte {
+
+            0%,
+            100% {
+                filter: hue-rotate(0deg);
+            }
+
+            50% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        #progressbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #008aff, #00ffe7);
+            filter: blur(5px);
+        }
+
+        #progressbar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #008aff, #00ffe7);
+            filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
+    <section>
+        <h2>scroll bar</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, ex tempore! Architecto, debitis eaque. Natus
+            quibusdam nobis aut delectus dolorem ducimus debitis nisi, explicabo maxime eius, suscipit ut? Reiciendis ut
+            nam earum, officia incidunt, exercitationem dicta maxime expedita saepe facilis, suscipit nulla et
+            doloremque sit velit unde at voluptatum illum dolores similique? Harum, itaque ut! Vitae quos sint veritatis
+            nostrum! Facere tempore velit odio quae id quasi vero repellat esse mollitia nam, illo neque totam eum minus
+            in repudiandae voluptatem natus ratione optio illum odit earum. Fuga accusamus odio ratione velit quo
+            suscipit autem deleniti quibusdam nulla, dolores corporis vitae laudantium voluptates iure dolore blanditiis
+            aut facilis inventore. Ullam obcaecati est aliquid expedita autem quia, fuga illo, facere dignissimos iste
+            corrupti. Velit unde perferendis, eum illum veniam, odio nulla ducimus natus vitae, earum perspiciatis quos
+            magni. Perspiciatis facere culpa excepturi ipsa. Ea aut corrupti tempora numquam architecto iure quaerat
+            dignissimos tempore. Laborum vero doloribus nemo deserunt nisi sunt expedita cumque, voluptas, earum, odit
+            nulla. Maiores deserunt placeat nisi ea cum quisquam omnis officia, et, voluptatum numquam architecto? Fuga
+            dolores architecto minima repellendus rem natus soluta. Porro voluptate, esse cum ipsam aliquam, quam hic,
+            consequatur similique Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, ex tempore!
+            Architecto, debitis eaque. Natus
+            quibusdam nobis aut delectus dolorem ducimus debitis nisi, explicabo maxime eius, suscipit ut? Reiciendis ut
+            nam earum, officia incidunt, exercitationem dicta maxime expedita saepe facilis, suscipit nulla et
+            doloremque sit velit unde at voluptatum illum dolores similique? Harum, itaque ut! Vitae quos sint veritatis
+            nostrum! Facere tempore velit odio quae id quasi vero repellat esse mollitia nam, illo neque totam eum minus
+            in repudiandae voluptatem natus ratione optio illum odit earum. Fuga accusamus odio ratione velit quo
+            suscipit autem deleniti quibusdam nulla, dolores corporis vitae laudantium voluptates iure dolore blanditiis
+            aut facilis inventore. Ullam obcaecati est aliquid expedita autem quia, fuga illo, facere dignissimos iste
+            corrupti. Velit unde perferendis, eum illum veniam, odio nulla ducimus natus vitae, earum perspiciatis quos
+            magni. Perspiciatis facere culpa excepturi ipsa. Ea aut corrupti tempora numquam architecto iure quaerat
+            dignissimos tempore. Laborum vero doloribus nemo deserunt nisi sunt expedita cumque, voluptas, earum, odit
+            nulla. Maiores deserunt placeat nisi ea cum quisquam omnis officia, et, voluptatum numquam architecto? Fuga
+            dolores architecto minima repellendus rem natus soluta. Porro voluptate, esse cum ipsam aliquam, quam hic,
+            consequatur similique tLorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, ex tempore!
+            Architecto, debitis eaque. Natus
+            quibusdam nobis aut delectus dolorem ducimus debitis nisi, explicabo maxime eius, suscipit ut? Reiciendis ut
+            nam earum, officia incidunt, exercitationem dicta maxime expedita saepe facilis, suscipit nulla et
+            doloremque sit velit unde at voluptatum illum dolores similique? Harum, itaque ut! Vitae quos sint veritatis
+            nostrum! Facere tempore velit odio quae id quasi vero repellat esse mollitia nam, illo neque totam eum minus
+            in repudiandae voluptatem natus ratione optio illum odit earum. Fuga accusamus odio ratione velit quo
+            suscipit autem deleniti quibusdam nulla, dolores corporis vitae laudantium voluptates iure dolore blanditiis
+            aut facilis inventore. Ullam obcaecati est aliquid expedita autem quia, fuga illo, facere dignissimos iste
+            corrupti. Velit unde perferendis, eum illum veniam, odio nulla ducimus natus vitae, earum perspiciatis quos
+            magni. Perspiciatis facere culpa excepturi ipsa. Ea aut corrupti tempora numquam architecto iure quaerat
+            dignissimos tempore. Laborum vero doloribus nemo deserunt nisi sunt expedita cumque, voluptas, earum, odit
+            nulla. Maiores deserunt placeat nisi ea cum quisquam omnis officia, et, voluptatum numquam architecto? Fuga
+            dolores architecto minima repellendus rem natus soluta. Porro voluptate, esse cum ipsam aliquam, quam hic,
+            consequatur similique ttempore inventore facilis ullam. Sunt?</p>
+    </section>
+    <script>
+        let progress = document.getElementById('progressbar'
+        );
+        let totalHeight = document.body.scrollHeight -
+            window.innerHeight;
+        window.onscroll = function () {
+            let progressHight = (window.pageYOffset / totalHeight) * 100
+            progress.style.height = progressHight + "%";
+        }
+
+    </script>
+</body>
+
+</html>

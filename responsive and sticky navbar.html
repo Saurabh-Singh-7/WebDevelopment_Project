@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            padding: 0px 100px;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            /* background-color: #111; */
+        }
+
+        header .logo {
+            color: #fff;
+            font-size: 30px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        header ul {
+            position: relative;
+            display: flex;
+        }
+
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+
+        header ul li a {
+            position: relative;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: inline-block;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        header.sticky {
+            background-color: #111;
+            padding: 5px 100px;
+        }
+
+        .toggle {
+            display: none;
+        }
+
+        header ul li a.active,
+        header ul li a:hover {
+            background-color: #205aff;
+        }
+
+        .text {
+            padding: 100px 100px;
+            background-color: rgb(0, 174, 255);
+            color: rgb(36, 255, 218);
+        }
+
+
+        @media(max-width: 922px) {
+            header ul {
+                position: absolute;
+                top: 50px;
+                left: 0px;
+                width: 100%;
+                height: calc(100vh - 50px);
+                padding: 100px 150px;
+                overflow: auto;
+                text-align: center;
+                flex-direction: column;
+                background: #111;
+                transition: 0.5s;
+                transform: translateY(100%);
+            }
+
+            header.active ul {
+                transform: translateY(0);
+            }
+
+            header ul li a {
+                margin: 5px 0px;
+                font-size: 26px;
+            }
+
+            .toggle {
+                display: block;
+                position: relative;
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+            }
+
+            .toggle::before {
+                content: '';
+                position: absolute;
+                top: 4px;
+                width: 100%;
+                height: 2px;
+                background-color: rgb(163, 36, 36);
+                box-shadow: 0 10px 0 #fff;
+                transition: 0.5s;
+                z-index: 1;
+            }
+
+            .toggle::after {
+                content: '';
+                position: absolute;
+                bottom: 4px;
+                width: 100%;
+                height: 2px;
+                background-color: rgb(255, 0, 0);
+
+                transition: 0.5s;
+                z-index: 1;
+            }
+
+            header.active .toggle::before {
+                top: 14px;
+                transform: rotate(45deg);
+                box-shadow: 0 0 0 #fff;
+            }
+
+            header.active .toggle::after {
+                bottom: 14px;
+                transform: rotate(-45deg);
+
+            }
+
+            img {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+
+        <a href="#" class="logo">LOGO</a>
+        <ul>
+            <li> <a href="#" class="active" onclick=" toggle()">Home</a> </li>
+            <li> <a href="#text" onclick=" toggle()">Contact</a> </li>
+            <li> <a href="#text2 " onclick=" toggle()">Book</a> </li>
+            <li> <a href="#" onclick=" toggle()">Team</a> </li>
+        </ul>
+        <div class="toggle" onclick=" toggle()"></div>
+    </header>
+    <div class="text" id="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam deserunt eveniet sint magni est, voluptatem velit
+        officia ullam eos soluta aspernatur optio nesciunt explicabo, nemo architecto? At dicta consequuntur totam nihil
+        provident ea nobis repellat in maxime voluptatum, est ipsum velit omnis eaque alias consequatur labore tempora
+        libero adipisci? Expedita provident nam, quod natus nesciunt veniam qui atque iure ut, quam aut reprehenderit
+        minus? Sint reiciendis ex eos dolores iusto dignissimos asperiores voluptatem magni autem accusantium ad sit
+        laboriosam porro et, est nam amet eaque? Ipsam labore, sed deserunt quam incidunt doloribus culpa. Cupiditate
+        ea, sed quaerat qui et, eius eaque id sint autem aspernatur unde explicabo nam fuga est harum fugit dolorem?
+        Consequuntur, blanditiis dolore dolor quis cum ducimus. Assumenda illum, nam optio dolorum saepe eos ratione
+        unde fugiat sapiente consectetur, nisi sint tempore quae non vitae nobis! Pariatur quasi veniam, alias inventore
+        libero at aliquam provident! Amet consequatur molestias ullam ducimus error deserunt asperiores ad saepe
+        deleniti voluptatum reiciendis aperiam optio, enim quidem doloribus debitis voluptates dignissimos at quos
+        facilis facere dolorum? Velit facere autem quam sapiente praesentium nisi consequuntur, molestias sit vero quasi
+        incidunt repellendus, vel totam ea blanditiis veritatis! Veritatis accusamus aliquid aperiam nesciunt! Autem
+        repellat nemo reprehenderit maxime magnam, velit suscipit quo laborum sequi quia asperiores officia dolore rerum
+        possimus ab, voluptatem iusto eius mollitia non molestias tempore harum veritatis esse quos! Unde, delectus.
+        Deleniti minima odit, dicta vero alias debitis cum velit aut, cumque consequuntur in cupiditate, optio ut
+        inventore commodi? Molestiae cumque magni non eaque illum, in expedita ipsam laborum quisquam laboriosam itaque
+        eius? Molestiae necessitatibus repellat ullam minus debitis corporis amet. Neque quae dolor distinctio
+        doloremque deleniti rerum animi laboriosam cum reiciendis nobis! Architecto similique quos illum sunt beatae
+        quasi a iure ipsum rerum illo magni commodi, sit, temporibus blanditiis placeat odio quas adipisci aliquam atque
+        perspiciatis eaque! Autem architecto expedita perspiciatis, animi alias temporibus? Modi, nulla? Quo temporibus
+        voluptatibus voluptatem ducimus, aliquid maxime quasi ullam! Laudantium laboriosam ea, fugiat ipsum quis
+        adipisci maiores cum excepturi harum labore deserunt ut expedita ad magnam cupiditate sunt vero dolorum
+        inventore hic nobis repellendus quam quibusdam alias quod. Sunt excepturi, culpa, earum qui minus a, itaque
+        voluptates illum voluptatum optio facilis odio accusamus soluta illo praesentium! Quasi, quidem ducimus iste non
+        iure inventore minus sequi qui. Doloribus labore obcaecati et necessitatibus nostrum vero omnis quod recusandae,
+        nisi illum pariatur quis quidem accusamus incidunt possimus, blanditiis quibusdam, hic sunt voluptatibus?
+        Suscipit, magnam sed vel quibusdam iusto corrupti itaque eaque ipsam beatae. Magnam eius eum veritatis dolores
+        ratione optio. Architecto libero fugit dolor cumque saepe at similique esse, tenetur consectetur maiores alias
+        dolore qui dolores illo totam placeat, unde soluta, officia optio vitae excepturi culpa? Provident, voluptates
+        nulla? Assumenda hic consequatur ullam dolorem!
+    </div>
+
+    <div class="text" id="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam deserunt eveniet sint magni est, voluptatem velit
+        officia ullam eos soluta aspernatur optio nesciunt explicabo, nemo architecto? At dicta consequuntur totam nihil
+        provident ea nobis repellat in maxime voluptatum, est ipsum velit omnis eaque alias consequatur labore tempora
+        libero adipisci? Expedita provident nam, quod natus nesciunt veniam qui atque iure ut, quam aut reprehenderit
+        minus? Sint reiciendis ex eos dolores iusto dignissimos asperiores voluptatem magni autem accusantium ad sit
+        laboriosam porro et, est nam amet eaque? Ipsam labore, sed deserunt quam incidunt doloribus culpa. Cupiditate
+        ea, sed quaerat qui et, eius eaque id sint autem aspernatur unde explicabo nam fuga est harum fugit dolorem?
+        Consequuntur, blanditiis dolore dolor quis cum ducimus. Assumenda illum, nam optio dolorum saepe eos ratione
+        unde fugiat sapiente consectetur, nisi sint tempore quae non vitae nobis! Pariatur quasi veniam, alias inventore
+        libero at aliquam provident! Amet consequatur molestias ullam ducimus error deserunt asperiores ad saepe
+        deleniti voluptatum reiciendis aperiam optio, enim quidem doloribus debitis voluptates dignissimos at quos
+        facilis facere dolorum? Velit facere autem quam sapiente praesentium nisi consequuntur, molestias sit vero quasi
+        incidunt repellendus, vel totam ea blanditiis veritatis! Veritatis accusamus aliquid aperiam nesciunt! Autem
+        repellat nemo reprehenderit maxime magnam, velit suscipit quo laborum sequi quia asperiores officia dolore rerum
+        possimus ab, voluptatem iusto eius mollitia non molestias tempore harum veritatis esse quos! Unde, delectus.
+        Deleniti minima odit, dicta vero alias debitis cum velit aut, cumque consequuntur in cupiditate, optio ut
+        inventore commodi? Molestiae cumque magni non eaque illum, in expedita ipsam laborum quisquam laboriosam itaque
+        eius? Molestiae necessitatibus repellat ullam minus debitis corporis amet. Neque quae dolor distinctio
+        doloremque deleniti rerum animi laboriosam cum reiciendis nobis! Architecto similique quos illum sunt beatae
+        quasi a iure ipsum rerum illo magni commodi, sit, temporibus blanditiis placeat odio quas adipisci aliquam atque
+        perspiciatis eaque! Autem architecto expedita perspiciatis, animi alias temporibus? Modi, nulla? Quo temporibus
+        voluptatibus voluptatem ducimus, aliquid maxime quasi ullam! Laudantium laboriosam ea, fugiat ipsum quis
+        adipisci maiores cum excepturi harum labore deserunt ut expedita ad magnam cupiditate sunt vero dolorum
+        inventore hic nobis repellendus quam quibusdam alias quod. Sunt excepturi, culpa, earum qui minus a, itaque
+        voluptates illum voluptatum optio facilis odio accusamus soluta illo praesentium! Quasi, quidem ducimus iste non
+        iure inventore minus sequi qui. Doloribus labore obcaecati et necessitatibus nostrum vero omnis quod recusandae,
+        nisi illum pariatur quis quidem accusamus incidunt possimus, blanditiis quibusdam, hic sunt voluptatibus?
+        Suscipit, magnam sed vel quibusdam iusto corrupti itaque eaque ipsam beatae. Magnam eius eum veritatis dolores
+        ratione optio. Architecto libero fugit dolor cumque saepe at similique esse, tenetur consectetur maiores alias
+        dolore qui dolores illo totam placeat, unde soluta, officia optio vitae excepturi culpa? Provident, voluptates
+        nulla? Assumenda hic consequatur ullam dolorem!
+    </div>
+    <script>
+        function toggle() {
+            var header = document.getElementById("header")
+            header.classList.toggle('active')
+        }
+
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector("header")
+            header.classList.toggle('sticky', window.scrollY > 40);
+        });
+
+    </script>
+</body>
+
+</html>
